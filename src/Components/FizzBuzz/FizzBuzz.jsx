@@ -1,6 +1,8 @@
+import Stopwatch from '../Stopwatch/Stopwatch';
+
 import { useEffect, useState } from 'react'
 
-function FizzBuzz() {
+function FizzBuzz({ stopwatchStatus }) {
   const [curNum, setCurNum] = useState(1);
   const [answer, setAnswer] = useState(curNum.toString());
 
@@ -18,16 +20,18 @@ function FizzBuzz() {
   }, [curNum])
 
   const test = (e) => {
-    const oi = e.target.id
-    if(oi === answer){
+    const hello = e.target.id
+    if(hello === answer){
       setCurNum(num => num + 1)
     } else{
       setCurNum(1)
+      setTeste(false);
     }
   }
 
   return (
     <>
+      <Stopwatch teste={stopwatchStatus}/>
       <p>{curNum}</p>
       <div onClick={(e) => test(e)}>
         <button id={curNum}>{curNum}</button>
