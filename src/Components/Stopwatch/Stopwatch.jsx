@@ -1,28 +1,36 @@
 import { useEffect, useState } from 'react'
 
-function Stopwatch({ teste }) {
-  const [sec, setSec] = useState(0)
-  const [mili, setMili] = useState(0)
+const Stopwatch = ({ status }) => {
+  const [sec, setSec] = useState(0);
+  const [mili, setMili] = useState(0);
 
-  useEffect(() => {
-    if(teste){
+  useEffect(() => stopwatchLogic());
+
+  const stopwatchLogic = () => {
+    if (status === 'start') {
       const timer = setInterval(() => {
-        setMili(mili => mili + 1)
-      }, 10)
+        setMili((m) => m + 1);
+      }, 10);
 
-      if(mili === 99){
-        setSec(sec => sec + 1)
-        setMili(0)
+      if (mili === 99) {
+        setSec((s) => s + 1);
+        setMili(0);
       }
-
-      return () => clearInterval(timer)
+      return () => clearInterval(timer);
+    } else if (status === "stop") {
+      setSec(0);
+      setMili(0);
     }
-  })
+  };
 
   return (
-    <>
-      <p>{sec}:{mili}</p>
-    </>
+    <div>
+      <p>
+        {sec}
+        :
+        {mili}
+      </p>
+    </div>
   )
 }
 
