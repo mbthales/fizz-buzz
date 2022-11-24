@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 const Stopwatch = ({ status }) => {
   const [sec, setSec] = useState(0);
   const [mili, setMili] = useState(0);
+  const [record, setRecord] = useState('0:0');
 
   useEffect(() => stopwatchLogic());
 
@@ -16,15 +17,34 @@ const Stopwatch = ({ status }) => {
         setSec((s) => s + 1);
         setMili(0);
       }
+
       return () => clearInterval(timer);
     } else if (status === "stop") {
-      setSec(0);
-      setMili(0);
+      checkRecord();
     }
+  };
+
+  const checkRecord = () => {
+    const curRecord = record.split(':');
+    const curRecordSec = Number(curRecord[0]);
+    const curRecordMili = Number(curRecord[1]);
+
+    const conditionOne = sec > curRecordSec && mili > curRecordMili;
+    const conditionTwo = sec === curRecordSec && mili > curRecordMili;
+    const conditionThree = sec > curRecordSec && mili === curRecordMili;
+    const conditionFour = sec > curRecordSec && mili < curRecordMili;
+
+    if (conditionOne || conditionTwo || conditionThree || conditionFour) {
+      setRecord(`${sec}:${mili}`);
+    }
+
+    setSec(0);
+    setMili(0);
   };
 
   return (
     <div>
+      {record}
       <p>
         {sec}
         :

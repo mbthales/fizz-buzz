@@ -2,6 +2,7 @@ import Stopwatch from '../Stopwatch/Stopwatch';
 
 import { useEffect, useState } from 'react'
 
+
 const FizzBuzz = () => {
   const [stopwatchStatus, setStopwatchStatus] = useState('stop');
   const [curNum, setCurNum] = useState(1);
@@ -16,25 +17,13 @@ const FizzBuzz = () => {
     setStopwatchStatus('stop');
   };
 
-  // const checkRecord = () => {
-  //   const curRecord = record.split(':');
-  //   const curRecordSec = curRecord[0];
-  //   const curRecordMili = curRecord[1];
-
-  //   if (sec > curRecordSec) {
-  //     setRecord(`${sec}:${mili}`);
-  //   } else if (sec === curRecordSec && mili > curRecordMili) {
-  //     setRecord(`${sec}:${mili}`);
-  //   }
-  // };
-
   const checkIfAnswerIsCorrect = (e) => {
     const btnClicked = e.target.id;
 
     if (btnClicked === answer) {
       setCurNum((num) => num + 1);
     } else {
-      //checkRecord();
+      setStopwatchStatus("end");
       resetGame();
     }
   };
