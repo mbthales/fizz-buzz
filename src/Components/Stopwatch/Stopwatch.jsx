@@ -47,7 +47,9 @@ const Stopwatch = ({ status }) => {
 
 	return (
 		<div>
-			{record}
+			<p className="mt-10 text-xl text-center font-text">
+				<span className="font-semibold">Record: </span>{record}
+			</p>
 			<p>
 				{sec}
         :

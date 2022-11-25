@@ -55,7 +55,7 @@ const FizzBuzz = () => {
 							<button type="button" id="fizzbuzz">FizzBuzz</button>
 						</div>
 					</div>:
-					<button onClick={() => setStopwatchStatus("start")}>Start Game</button>
+					<button type="button" className="py-4 px-6 my-12 mx-auto block rounded text-xl font-text bg-zinc-500" onClick={() => setStopwatchStatus("start")}>Start Game</button>
 			}
       
 		</div>
