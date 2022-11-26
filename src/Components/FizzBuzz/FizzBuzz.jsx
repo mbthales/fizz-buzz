@@ -2,6 +2,7 @@ import { React } from "react";
 import { useEffect, useState } from "react";
 
 import Stopwatch from "../Stopwatch/Stopwatch";
+import HowToPlay from "../HowToPlay/HowToPlay";
 
 const FizzBuzz = () => {
 	const [stopwatchStatus, setStopwatchStatus] = useState("stop");
@@ -47,16 +48,21 @@ const FizzBuzz = () => {
 			{
 				stopwatchStatus === "start" ?
 					<div>
-						<p>{curNum}</p>
-						<div onClick={(e) => checkIfAnswerIsCorrect(e)}>
-							<button type="button" id={curNum}>{curNum}</button>
-							<button type="button" id="fizz">Fizz</button>
-							<button type="button" id="buzz">Buzz</button>
-							<button type="button" id="fizzbuzz">FizzBuzz</button>
+						<p className="mt-4 font-text text-2xl font-medium text-center">{curNum}</p>
+						<div className="flex flex-wrap justify-center gap-3 mt-6 max-w-xl mx-auto" onClick={(e) => checkIfAnswerIsCorrect(e)}>
+							<button type="button" className="py-4 px-6 rounded font-text bg-zinc-500 text-xl w-32" id={curNum}>{curNum}</button>
+							<button type="button" className="py-4 px-6 rounded font-text bg-zinc-500 text-xl w-32" id="fizz">Fizz</button>
+							<button type="button" className="py-4 px-6 rounded font-text bg-zinc-500 text-xl w-32" id="buzz">Buzz</button>
+							<button type="button" className="py-4 px-6 rounded font-text bg-zinc-500 text-xl w-32" id="fizzbuzz">FizzBuzz</button>
 						</div>
-					</div>:
-					<button type="button" className="py-4 px-6 my-12 mx-auto block rounded text-xl font-text bg-zinc-500" onClick={() => setStopwatchStatus("start")}>Start Game</button>
+					</div>
+					:
+					<>					
+						<button type="button" className="py-4 px-6 my-12 w-32 mx-auto block rounded font-text bg-zinc-500 text-xl" onClick={() => setStopwatchStatus("start")}>Start</button>
+						<HowToPlay />
+					</>
 			}
+
       
 		</div>
 	);

@@ -47,14 +47,17 @@ const Stopwatch = ({ status }) => {
 
 	return (
 		<div>
-			<p className="mt-10 text-xl text-center font-text">
-				<span className="font-semibold">Record: </span>{record}
-			</p>
-			<p>
-				{sec}
-        :
-				{mili}
-			</p>
+			{status === "stop" ? (
+				<p className="mt-10 text-xl text-center font-text">
+					<span className="font-semibold">Record: </span>{record}
+				</p>
+			) : status === "start" && (
+				<p className="mt-10 text-xl text-center font-text">
+					{sec}
+					:
+					{mili}
+				</p>
+			)}
 		</div>
 	);
 };
