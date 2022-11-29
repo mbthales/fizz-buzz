@@ -11,11 +11,18 @@ const FizzBuzz = () => {
 
 	useEffect(() => {
 		updateCorrectAnswer();
+		endGame();
 	}, [curNum]);
 
-	const resetGame = () => {
+	const resetGame = (status) => {
+		setStopwatchStatus(status);
 		setCurNum(1);
-		setStopwatchStatus("stop");
+	};
+
+	const endGame = () => {
+		if(curNum === 6){
+			resetGame("check");
+		}
 	};
 
 	const checkIfAnswerIsCorrect = (e) => {
@@ -24,8 +31,7 @@ const FizzBuzz = () => {
 		if (btnClicked === answer) {
 			setCurNum((num) => num + 1);
 		} else {
-			setStopwatchStatus("end");
-			resetGame();
+			resetGame("stop");
 		}
 	};
 
@@ -43,7 +49,7 @@ const FizzBuzz = () => {
 
 	return (
 		<div>
-			<Stopwatch status={stopwatchStatus}/>
+			<Stopwatch status={stopwatchStatus} curNum={curNum}/>
 
 			{
 				stopwatchStatus === "start" ?
