@@ -2,7 +2,7 @@ import { React } from "react";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-const Stopwatch = ({ status }) => {
+const Stopwatch = ({ stopwatchStatus: status, setIsANewRecord }) => {
 	const savedRecordTime = localStorage.getItem("recordTime");
 
 	const [sec, setSec] = useState("0");
@@ -61,6 +61,7 @@ const Stopwatch = ({ status }) => {
 
 	const updateRecord = () =>{
 		setRecordTime(`${formatCounter(sec)}:${formatCounter(mili)}`);
+		setIsANewRecord(true);
 	};
 
 	const saveRecord = () => {
@@ -71,24 +72,24 @@ const Stopwatch = ({ status }) => {
 		return secOrMili < 10 ? `0${secOrMili}` : secOrMili;
 	};
 
-	return (
-		<div>
-			{status === "check" || status === "stop" ? (
-				<p className="mt-10 text-xl text-center font-text">
-					<span className="font-semibold">Record: </span>{recordTime}
-				</p>
-			) : status === "start" && (
-				<p className="mt-10 text-xl text-center font-text">
-					{formatCounter(sec)}:{formatCounter(mili)}
-				</p>
-			)}
-		</div>
-	);
+	if(status === "check" || status === "stop"){
+		return(
+			<p className="mt-10 text-xl text-center font-text">
+				<span className="font-semibold">Record: </span>{recordTime}
+			</p>
+		);
+	} else if(status === "start") {
+		return (
+			<p className="mt-10 text-xl text-center font-text">
+				{formatCounter(sec)}:{formatCounter(mili)}
+			</p>
+		);
+	}
 };
 
 Stopwatch.propTypes = {
-	status: PropTypes.string,
-	curNum: PropTypes.number
+	stopwatchStatus: PropTypes.string,
+	setIsANewRecord: PropTypes.func
 };
 
 export default Stopwatch;

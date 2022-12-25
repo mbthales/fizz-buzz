@@ -1,6 +1,6 @@
 import { React } from "react";
 
-import FizzBuzz from "./Components/FizzBuzz/FizzBuzz";
+import FizzBuzz from "./Components/FizzBuzz";
 
 const App = () => {
 	return (
