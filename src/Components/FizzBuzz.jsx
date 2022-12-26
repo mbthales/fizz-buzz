@@ -20,10 +20,10 @@ const CurNumAndAnswers = ({ answer, setCurNum, resetGame, curNum }) => {
 		<div>
 			<p className="mt-4 font-text text-2xl font-medium text-center">{curNum}</p>
 			<div className="flex flex-wrap justify-center gap-3 mt-6 max-w-xl mx-auto" onClick={(e) => checkIfAnswerIsCorrect(e)}>
-				<button type="button" className="py-4 px-6 rounded font-text bg-zinc-500 text-xl w-32" id={curNum}>{curNum}</button>
-				<button type="button" className="py-4 px-6 rounded font-text bg-zinc-500 text-xl w-32" id="fizz">Fizz</button>
-				<button type="button" className="py-4 px-6 rounded font-text bg-zinc-500 text-xl w-32" id="buzz">Buzz</button>
-				<button type="button" className="py-4 px-6 rounded font-text bg-zinc-500 text-xl w-32" id="fizzbuzz">FizzBuzz</button>
+				<button type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id={curNum}>{curNum}</button>
+				<button type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id="fizz">Fizz</button>
+				<button type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id="buzz">Buzz</button>
+				<button type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id="fizzbuzz">FizzBuzz</button>
 			</div>
 		</div>
 	);
@@ -31,7 +31,7 @@ const CurNumAndAnswers = ({ answer, setCurNum, resetGame, curNum }) => {
 
 const RestartStartButton = ({ setStopwatchStatus, btnName }) => {
 	return(
-		<button type="button" className="py-4 px-6 my-12 w-32 mx-auto block rounded font-text bg-zinc-500 text-xl" onClick={() => setStopwatchStatus("start")}>{btnName}</button>
+		<button type="button" className="py-4 px-6 my-12 w-32 mx-auto block rounded font-text text-xl text-primary-600 bg-accent" onClick={() => setStopwatchStatus("start")}>{btnName}</button>
 	);
 };
 
@@ -53,7 +53,7 @@ const FizzBuzz = () => {
 	};
 
 	const checkIfGameEnded = () => {
-		curNum === 6 && resetGame("check");
+		curNum === 20 && resetGame("check");
 	};
 
 	const updateCorrectAnswer = () => {

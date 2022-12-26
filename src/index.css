@@ -4,6 +4,21 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body{
+  @apply h-full w-full;
+}
+
+html{
+  @apply bg-primary text-secundary font-text;
+}
+
+body{
+  @apply flex justify-center items-center;
+}
+
+
+
   /* .btn-answer{
     @apply 
   } */
