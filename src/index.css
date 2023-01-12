@@ -17,8 +17,7 @@ body{
   @apply flex justify-center items-center;
 }
 
-
-
-  /* .btn-answer{
-    @apply 
-  } */
+.center-vertically{
+  @apply top-0 left-2/4;
+  transform: translate(-50%, 0);
+}
