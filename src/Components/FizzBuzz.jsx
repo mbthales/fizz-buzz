@@ -53,7 +53,7 @@ const FizzBuzz = () => {
 	};
 
 	const checkIfGameEnded = () => {
-		curNum === 20 && resetGame("check");
+		curNum === 5 && resetGame("check");
 	};
 
 	const updateCorrectAnswer = () => {
@@ -85,7 +85,7 @@ const FizzBuzz = () => {
 				);
 				case "wrong": return (
 					<>
-						<p>You failed!</p>
+						<p className="mt-10 text-xl text-center font-text">You failed. Try again!</p>
 						<RestartStartButton 
 							{...{setStopwatchStatus}} 
 							btnName={"Restart"} 
@@ -95,8 +95,8 @@ const FizzBuzz = () => {
 				case "check": return (
 					<>
 						{isANewRecord ? 
-							<p>New Record!</p>
-							: <p>You didnt beat your record. Try again!</p>
+							<p className="mt-10 text-xl text-center font-text">New Record. Congratulations!</p>
+							: <p className="mt-10 text-xl text-center font-text">You didn&#39;t beat your record. Try again!</p>
 						}
 						<RestartStartButton 
 							{...{setStopwatchStatus}} 
