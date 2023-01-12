@@ -53,16 +53,16 @@ const FizzBuzz = () => {
 	};
 
 	const checkIfGameEnded = () => {
-		curNum === 5 && resetGame("check");
+		curNum === 21 && resetGame("check");
 	};
 
 	const updateCorrectAnswer = () => {
-		if (curNum % 3 === 0) {
+		if (curNum % 15 === 0) {
+			setAnswer("fizzbuzz");
+		} else if (curNum % 3 === 0) {
 			setAnswer("fizz");
 		} else if (curNum % 5 === 0) {
 			setAnswer("buzz");
-		} else if (curNum % 15 === 0) {
-			setAnswer("fizzbuzz");
 		} else {
 			setAnswer(curNum.toString());
 		}
