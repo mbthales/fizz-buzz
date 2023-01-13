@@ -1,6 +1,7 @@
 import { React } from "react";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 import Stopwatch from "./Stopwatch";
 import HowToPlay from "./HowToPlay";
@@ -18,12 +19,12 @@ const CurNumAndAnswers = ({ answer, setCurNum, resetGame, curNum }) => {
 
 	return (
 		<div>
-			<p className="mt-4 font-text text-2xl font-medium text-center">{curNum}</p>
+			<motion.p className="mt-4 font-text text-2xl font-medium text-center">{curNum}</motion.p>
 			<div className="flex flex-wrap justify-center gap-3 mt-6 max-w-xl mx-auto" onClick={(e) => checkIfAnswerIsCorrect(e)}>
-				<button type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id={curNum}>{curNum}</button>
-				<button type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id="fizz">Fizz</button>
-				<button type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id="buzz">Buzz</button>
-				<button type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id="fizzbuzz">FizzBuzz</button>
+				<motion.button whileHover={{ scale: 1.1 }} whileTap={{scale: 0.9}} type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id={curNum}>{curNum}</motion.button>
+				<motion.button whileHover={{ scale: 1.1 }} whileTap={{scale: 0.9}} type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id="fizz">Fizz</motion.button>
+				<motion.button whileHover={{ scale: 1.1 }} whileTap={{scale: 0.9}} type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id="buzz">Buzz</motion.button>
+				<motion.button whileHover={{ scale: 1.1 }} whileTap={{scale: 0.9}} type="button" className="py-4 px-6 rounded font-text bg-accent text-primary-600 text-xl w-32" id="fizzbuzz">FizzBuzz</motion.button>
 			</div>
 		</div>
 	);
@@ -31,7 +32,9 @@ const CurNumAndAnswers = ({ answer, setCurNum, resetGame, curNum }) => {
 
 const RestartStartButton = ({ setStopwatchStatus, btnName }) => {
 	return(
-		<button type="button" className="py-4 px-6 my-12 w-32 mx-auto block rounded font-text text-xl text-primary-600 bg-accent" onClick={() => setStopwatchStatus("start")}>{btnName}</button>
+		<motion.button whileHover={{ scale: 1.1 }}
+			type="button" className="py-4 px-6 my-12 w-32 mx-auto block rounded font-text text-xl text-primary-600 bg-accent" onClick={() => setStopwatchStatus("start")}>{btnName}
+		</motion.button>
 	);
 };
 

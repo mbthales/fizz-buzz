@@ -1,9 +1,11 @@
 import { React } from "react";
 import { useState } from "react";
+import { motion, AnimatePresence, easeIn } from "framer-motion";
 
 const HowToPlayText = () => {
 	return(
-		<div className="text-center text-lg absolute bg-accent text-primary-600 h-96 w-full p-10 flex flex-col justify-center center-vertically rounded">
+		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+			transition={{ease: easeIn, duration: 0.1}} className="text-center text-lg absolute bg-accent text-primary-600 h-96 w-full p-10 flex flex-col justify-center center-vertically rounded">
 			<h2 className="text-3xl font-semibold">Como jogar</h2>
 			<ul className="my-8">
 				<li>Número múltiplo de 3: <span className="font-bold">Fizz</span></li>
@@ -11,7 +13,7 @@ const HowToPlayText = () => {
 				<li>Número múltiplo de 15: <span className="font-bold">FizzBuzz</span></li>
 			</ul>
 			<p>O número máximo é 20.</p>
-		</div>
+		</motion.div>
 	);
 };
 
@@ -21,12 +23,15 @@ const HowToPlay = () => {
 
 	return (
 		<>
-			{(() =>{
-				if(helpAvailable){
-					return <HowToPlayText />;
-				}
-			})()}
-			<button className="absolute top-negative-3rem right-4 text-xl font-bold text-accent" type="button" onClick={() => setHelpAvailable(!helpAvailable)}>?</button>
+			
+			<AnimatePresence>
+				{ helpAvailable && <HowToPlayText /> }
+			</AnimatePresence>
+			
+			<motion.button whileHover={{ scale: 1.5 }} whileTap={{ rotate: 360 }}
+				className="absolute top-negative-3rem right-4 text-xl font-bold text-accent" type="button" onClick={() => setHelpAvailable(!helpAvailable)}>
+				?
+			</motion.button>
 		</>
 	);
 };
