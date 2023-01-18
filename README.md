@@ -1,26 +1,18 @@
-# Fizz Buzz Game
-
-## Table of Contents
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Build With](#build_with)
-
-
+# Fizz Buzz
+## Tabela de Conteúdo
+- [Sobre](#about)
+- [Começando](#getting_started)
+- [Feito Com](#build_with)
 ## About <a name = "about"></a>
-It's a simple Fizz Buzz Game. Basicaly, this game consisting of tapping the button Fizz if the number is divisible by 3, Buzz if the number is divisible by 5 and FizzBuzz if the number is divisible by 15. You have to beat your own record.
-
-## Getting Started <a name = "getting_started"></a>
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
+É um jogo de Fizz Buzz. Basicamente, o jogo consiste em apertar o botão Fizz se o número for divísivel por 3, apertar o botão Buzz se o número for divísivel por 5, apertar o botão FizzBuz se o número for divisível por 15 e apertar o botão do próprio número se ele não for dívisivel por nenhuma das opções anteriores. Seu desafio é bater seu próprio recorde.
+## Começando <a name="getting_started"></a>
+### Pré-Requisitos
 - Node.js
-
-### Installing
-- Clone this project in your machine
-- Install the packages with `yarn` or `npm`
-- Run with `yarn dev` or `npm run dev`
-
-## Build With <a name = "build_with">
+### Instalação
+- Clone este repositório na sua máquina
+- Instale os pacotes com `yarn` or `npm`
+- Rode o código com `yarn dev` or `npm run dev`
+## Feito Com <a name="build_with">
 - React JS
 - Vite
 - Tailwind CSS
