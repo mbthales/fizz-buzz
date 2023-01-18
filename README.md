@@ -3,7 +3,7 @@
 - [Sobre](#about)
 - [Começando](#getting_started)
 - [Feito Com](#build_with)
-## About <a name = "about"></a>
+## Sobre <a name="about"></a>
 É um jogo de Fizz Buzz. Basicamente, o jogo consiste em apertar o botão Fizz se o número for divísivel por 3, apertar o botão Buzz se o número for divísivel por 5, apertar o botão FizzBuz se o número for divisível por 15 e apertar o botão do próprio número se ele não for dívisivel por nenhuma das opções anteriores. Seu desafio é bater seu próprio recorde.
 ## Começando <a name="getting_started"></a>
 ### Pré-Requisitos
