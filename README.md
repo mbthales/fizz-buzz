@@ -13,7 +13,7 @@ Um jogo de Fizz Buzz. Basicamente, o jogo consiste em apertar o botão Fizz se o
 - Instale os pacotes com `yarn` or `npm`
 - Rode o código com `yarn dev` or `npm run dev`
 ## Feito Com <a name="build_with">
-- React JS
+- React
 - Vite
 - Tailwind CSS
 - Framer Motion
