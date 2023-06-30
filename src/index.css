@@ -5,19 +5,19 @@
 @tailwind utilities;
 
 html,
-body{
-  @apply h-full w-full;
+body {
+	@apply h-full w-full;
 }
 
-html{
-  @apply bg-primary text-secundary font-text;
+html {
+	@apply bg-primary font-text text-secundary;
 }
 
-body{
-  @apply flex justify-center items-center;
+body {
+	@apply flex items-center justify-center;
 }
 
-.center-vertically{
-  @apply top-0 left-2/4;
-  transform: translate(-50%, 0);
+.center-vertically {
+	@apply top-0 left-2/4;
+	transform: translate(-50%, 0);
 }
