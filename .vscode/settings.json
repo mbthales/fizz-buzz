@@ -1,0 +1,5 @@
+{
+	"cSpell.words": ["linebreak", "Parens", "tailwindcss"],
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode"
+}
