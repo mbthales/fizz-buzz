@@ -25,7 +25,7 @@ A Fizz Buzz Game. Basically, the game consists of pressing the Fizz button if th
 
 ### Running <a name="running"></a>
 
--  Run `yarn dev` or `npm dev`
+-  Run `yarn dev` or `npm run dev`
 
 ## Build With <a name="build_with"></a>
 
