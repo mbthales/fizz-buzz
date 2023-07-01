@@ -8,12 +8,13 @@
 	- [Getting Started ](#getting-started-)
 		- [Installation ](#installation-)
 		- [Running ](#running-)
+      - [How it Works ](#how-it-works-)
 	- [Build With ](#build-with-)
 	- [Contributing ](#contributing-)
 
 ## About <a name="about"></a>
 
-A Fizz Buzz Game. Basically, the game consists of pressing the Fizz button if the number is divisible by 3, pressing the Buzz button if the number is divisible by 5, pressing the FizzBuzz button if the number is divisible by 15, and pressing the number button itself if it is not divisible by any of the previous options. Your challenge is to beat your own record.
+A Fizz Buzz Game.
 
 ## Getting Started <a name="getting_started"></a>
 
@@ -26,6 +27,10 @@ A Fizz Buzz Game. Basically, the game consists of pressing the Fizz button if th
 ### Running <a name="running"></a>
 
 -  Run `yarn dev` or `npm run dev`
+
+### How it Works <a name="how-it-works"></a>
+
+Basically, the game consists of pressing the Fizz button if the number is divisible by 3, pressing the Buzz button if the number is divisible by 5, pressing the FizzBuzz button if the number is divisible by 15, and pressing the number button itself if it is not divisible by any of the previous options. Your challenge is to beat your own record.
 
 ## Build With <a name="build_with"></a>
 
